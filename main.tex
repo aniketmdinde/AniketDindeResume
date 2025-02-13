@@ -1,0 +1,461 @@
+%-------------------------
+% Resume in Latex
+% Author: Aniket Dinde
+% Based off of: https://github.com/sb2nov/resume
+% License: MIT
+%------------------------
+
+\documentclass[letterpaper,10pt]{article}
+\usepackage[T1]{fontenc}
+\newcommand\mybar{\kern1pt\rule[-\dp\strutbox]{0.8pt}{\baselineskip}\kern10pt}
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[misc]{ifsym}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{fontawesome}
+\usepackage{wasysym}
+
+\input{glyphtounicode}
+
+% FOR BLUE HIGHLIGHT OF HYPERLINKS
+\usepackage{xcolor}
+\hypersetup{colorlinks,urlcolor=blue}
+
+
+% FOR BLUE UNDERLINE
+% \usepackage[hidelinks]{hyperref} % Clickable URLs and cross-references.
+% \hypersetup{allbordercolors={1, 1, 1},
+% pdfborderstyle={/S/U/W 1}} % Underline links (non-printing).
+
+
+% FOR UNDERLINE
+% \usepackage{xcolor}            % specify colors by name (e.g. "red")
+% \usepackage{hyperref}          % clickable URls and cross-references
+% \hypersetup{
+%     pdfborderstyle={/S/U/W 1}, % underline links instead of boxes
+%     linkbordercolor=red,       % color of internal links
+%     citebordercolor=green,     % color of links to bibliography
+%     filebordercolor=magenta,   % color of file links
+%     urlbordercolor=cyan        % color of external links
+% }
+
+%----------FONT OPTIONS----------
+% sans-serif
+% \usepackage[sfdefault]{FiraSans}
+% \usepackage[sfdefault]{roboto}
+% \usepackage[sfdefault]{noto-sans}
+% \usepackage[default]{sourcesanspro}
+
+% serif
+% \usepackage{CormorantGaramond}
+\usepackage{charter}
+
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1.15in}
+\addtolength{\topmargin}{-0.6in}
+\addtolength{\textheight}{1.5in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+% This space is above the section heading
+  \vspace{-6pt}
+  \scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule 
+% This space is below the horizontal rule
+\vspace{-1pt}]
+
+% Ensure that generated pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+
+% Splitting this into two: resumeSubheadingFirst and resumeSubheadingSecond
+% \newcommand{\resumeSubheading}[4]{
+%   \vspace{-1pt}\item
+%     \begin{tabular*}{.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+%       \textbf{#1} & #2 \\
+%       \textit{\small#3} & \textit{\small #4} \\
+%     \end{tabular*}\vspace{-6pt}
+% }
+
+\newcommand{\resumeSubheadingFirst}[2]{
+  \vspace{-1pt}
+  \item
+    \begin{tabular*}{.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & \small{#2}
+    \end{tabular*}
+    % originally -6pt
+    \vspace{-8pt}
+}
+
+\newcommand{\resumeSubheadingSecond}[2]{
+  \item
+    \begin{tabular*}{.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2}
+    \end{tabular*}
+    \vspace{-6pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+    \begin{tabular*}
+    {1\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-6pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      #1 & \small\textit{#2} \\
+    \end{tabular*}\vspace{-6pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-3.5pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+% I have added this: [leftmargin=0.xyin]
+% \newcommand{\resumeItemListStart}{\begin{itemize}[leftmargin=0.13in]}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+
+%----------HEADING----------
+% \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+%   \textbf{\href{http://tusharnankani.com}{\Large Tushar Nankani}} & Email: \href{mailto:contact@tusharnankani.com}{contact@tusharnankani.com}\\
+%   \href{http://tusharnankani.com}{tusharnankani.com} & Mobile: +91 9987663816\\
+% \end{tabular*}
+
+\begin{center}
+    {\Huge \scshape Aniket Dinde} 
+    \\ \vspace{4pt}
+    % \faGlobe \space 
+    % \href{https://tusharnankani.com} 
+    % {tusharnankani.com}
+    % $|$ 
+    % \faLinkedin \space 
+    \href{https://www.linkedin.com/in/aniketmdinde}
+    {Linkedin}
+    $|$ 
+    % \faEnvelope \space 
+    \href{mailto:aniketmdinde@gmail.com}{aniketmdinde@gmail.com}
+    $|$
+    % \faGithub \space 
+    \href{https://github.com/aniketmdinde} 
+    {Github}  
+\end{center}
+
+
+%-----------EDUCATION-----------
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheadingFirst{University of Mumbai - Terna Engineering College}{Navi Mumbai, India}
+    \resumeSubheadingSecond{Bachelor of Engineering, Computer Engineering; GPA: 8.4/10}{Dec. 2021 -- Jun. 2025 (Tent.)}
+      \resumeItem{\textbf{Relevant Coursework}: Data Structures and Algorithms, Object-Oriented Programming (OOP), Java programming, C programming, Machine Learning, Database Management Systems, Operating Systems, Computer Networks, Cloud Computing, Software Engineering }
+  \resumeSubHeadingListEnd
+
+
+%
+%-----------PROGRAMMING SKILLS-----------
+ \section{Skills}
+    \begin{itemize}[leftmargin=0in, label={}]
+        {\item{
+            \begin{tabular}{ l@{\hskip 0.2in} l }            
+                \textbf{Languages}{: C++, Python, JavaScript, SQL} & 
+                \textbf{Databases}{: PostgreSQL, MongoDB, SQLite} \\
+                \textbf{Frameworks}{: React.js, Node.js, Express.js, Flask, HTML, CSS} & 
+                \textbf{ML \& AI}{: Pytorch, OpenCV, LangChain} \\
+                \textbf{Tools}{: Git, GitHub}
+            \end{tabular}
+        }}
+    \end{itemize}
+\vspace{-12pt}
+
+
+%-----------EXPERIENCE-----------
+\section{Experience}
+  \resumeSubHeadingListStart
+    \resumeSubheadingFirst
+        {Prepbook}
+        {Navi Mumbai, India}
+    \resumeSubheadingSecond
+        {SDE Intern $\vert$ Python, JavaScript, Flask, MongoDB, MERN, Google Sheets API}
+        {Aug. 2024 -- Dec. 2024}
+    \resumeItemListStart
+        \resumeItem {
+            Optimized workflow efficiency by 65\% by architecting a content creation platform using Flask, streamlining operations.
+        }
+        \resumeItem{
+            Expanded content availability by 80\% by automating content scraping with BeautifulSoup and Selenium, reducing manual effort.
+        }
+        \resumeItem{
+            Strengthened security and governance by implementing role-based access control and a content moderation system using MongoDB.
+        }
+        
+        \resumeItem {
+            Facilitated seamless legacy system integration by leveraging Google Sheets API, enabling language-based content segregation.
+        }
+        
+        \resumeItem {
+            Revamped user experience and performance by redesigning the website with the MERN stack, ensuring a fully optimized interface.
+        }
+        
+        \resumeItem {
+           Spearheaded product development and aligned engineering with business goals by collaborating with the Tech Lead and CEO.
+        }
+        
+        % \resumeItem {
+            % Adopting Agile Methodology, which includes Sprint Planning, daily stand-ups, Jira grooming, Sprint Demo \& Retrospective
+        % }
+    \resumeItemListEnd
+    % \resumeSubheadingFirst{}{}
+      %   \resumeSubheadingSecond
+      %       {Software Engineer Intern $\vert$ React.js, Redux, Spring, SQL, Agile}
+      %       {Jun. 2022 -- Jul. 2022}
+      % \resumeItemListStart
+      %   \resumeItem {
+      %       Migrated a multi-page application interface for the operations' dashboard of Margin and Collateral Services, from \href{https://www.sencha.com/products/extjs}{Ext JS} to React.js
+      %   }
+      %   \resumeItem {
+      %       Utilized the in-house JPMC’s UI Toolkit, decommissioned the monolith legacy code into functional micro-frontend architecture
+      %   }
+      %   \resumeItemListEnd
+    
+      
+% -----------Multiple Positions Heading-----------
+   % \resumeSubSubheading
+   %  {Software Engineer I}{Oct 2014 - Sep 2016}
+   %  \resumeItemListStart
+   %     \resumeItem{Apache Beam}
+   %       {Apache Beam is a unified model for defining both batch and streaming data-parallel processing pipelines}
+    % \resumeItemListEnd
+   % \resumeSubHeadingListEnd
+%-------------------------------------------
+
+
+  \resumeSubHeadingListEnd
+
+
+
+%-----------PROJECTS-----------
+\section{Projects}
+    \resumeSubHeadingListStart 
+    % ====================================================  PROJECT ONE
+
+      \resumeProjectHeading {
+            \textbf{AudiHealth} 
+            $|$ 
+            \small
+            {
+                \emph{Python, JavaScript, React.js, Express.js, Flask, MongoDB, DeepSeek-R1}
+            }
+            $|$ 
+            \href{https://youtu.be/9KAqlkkX7Mc}{Demo}
+        }
+        {}
+        \resumeItemListStart
+            \resumeItem {
+                  Engineered a voice pathology detection platform identifying laryngitis and polyps, generating AI-powered medical reports with actionable health insights
+            }
+            \resumeItem {
+                 Integrated WhatsApp for seamless accessibility, enabling real-time doctor search, daily exercise tracking, and continuous voice health monitoring
+            }
+        \resumeItemListEnd
+    % ====================================================  PROJECT ONE
+      \resumeProjectHeading {
+            \textbf{AIQuest} 
+            $|$ 
+            \small
+            {
+                \emph{Flask, ElasticSearch, Langchain, Llama 3.2 8B, SQLite}
+            }
+            $|$ 
+            % \href{https://youtu.be/C9mS0H-aYro}{Demo},
+            \href{https://github.com/Jeevanchoudhary9/AIQuests}{GitHub}
+        }
+        {}
+        \resumeItemListStart
+            \resumeItem {
+                Designed an AI-driven Q\&A platform for organizations, leveraging hybrid RAG (syntactic + semantic) and AI agents to retrieve and generate accurate responses
+            }
+            \resumeItem {
+                Implemented a moderator review system, empowering organizations with analytics to monitor question resolution and engagement trends
+            }
+        \resumeItemListEnd
+
+    % ====================================================  PROJECT ONE
+      % \resumeProjectHeading {
+      %       \textbf{RaashiPay} 
+      %       $|$ 
+      %       \small
+      %       {
+      %           \emph{React Native, Tailwind CSS, Express.js}
+      %       }
+      %   }
+      %   {Jan. 2023 -- Oct. 2023}
+      %   \resumeItemListStart
+      %       \resumeItem {
+      %            Engineered offline digital transactions for \href{https://www.rbi.org.in/Scripts/PublicationReportDetails.aspx?UrlPage=\&ID=1218\#CP2}{Central Bank Digital Currency} (CBDC) between Android devices via Wi-Fi Direct
+      %       }
+      %       \resumeItem {
+      %            Employed an \href{https://www.nist.gov/cybersecurity}{NIST}-approved post-quantum encryption system called Falcon to mitigate the risk of double spending
+      %       }
+      %   \resumeItemListEnd
+
+            % ====================================================  PROJECT ONE
+      \resumeProjectHeading {
+            \textbf{Vilokana (Reunite)} 
+            $|$ 
+            \small
+            {
+                \emph{React.js, Leaflet.js, Zustand, \href{https://recharts.org/en-US/}{recharts}, \href{https://github.com/serengil/deepface}{deepface}}, Flask-Restful, SQLite
+            }
+            $|$ 
+            \href{https://github.com/rushiijadhav23/Renuite-TSEC}{GitHub}
+        }
+        {}
+        \resumeItemListStart
+            \resumeItem {
+                Orchestrated a missing person search platform, integrating police and NGOs, leveraging facial recognition and dynamic search area mapping for optimized recovery efforts
+            }
+            \resumeItem {
+                Streamlined reporting and tracking by enabling WhatsApp-based image submissions, real-time status checks, and automated alerts to authorities
+            }
+        \resumeItemListEnd
+
+    % ====================================================  PROJECT TWO          
+        \resumeProjectHeading { 
+            \textbf{ArthML} 
+            $|$ 
+            \small
+            {
+                \emph{React.js, \href{https://recharts.org/en-US/}{recharts}, \href{https://pypi.org/project/lightfm/}{lightfm}, \href{https://xgboost.readthedocs.io/en/latest/index.html}{xgboost}, scikit-learn, Flask} 
+            }
+            $|$ 
+            \href{https://github.com/VaibhavKachare16/Datathon-25}{GitHub},       
+            \href{https://youtu.be/6ZObIOhUAwg?si=pK84LRo0GXXktg2H}{Demo}      
+        }
+        {}
+        \resumeItemListStart
+            \resumeItem {
+                Devised a machine learning platform to forecast sales, deploy hybrid recommendations, and map demand using Apriori and K-Means clustering for strategic outlet placement
+            }
+            \resumeItem {
+                Enhanced user engagement by delivering targeted product recommendations and personalized offers through content-based and collaborative filtering
+            }
+        \resumeItemListEnd
+
+    % ====================================================  PROJECT THREE
+        \resumeProjectHeading { 
+            \textbf{Bonheur} 
+            $|$ 
+            \small {   
+                \emph{React.js, \href{https://motion.dev/}{Framer Motion}}
+            }
+            $|$ 
+            \href{https://github.com/rushiijadhav23/Bonheur-cake/}{GitHub}, \href{https://bonheur-cake.vercel.app/}{Web Link}
+        }
+        {}
+        \resumeItemListStart
+            \resumeItem {
+                 Engineered an interactive cake shop website with a dynamic hover-based menu, enhancing user engagement and visual appeal
+            }
+        \resumeItemListEnd
+
+    % ====================================================  PROJECT FOUR
+        \resumeProjectHeading { 
+            \textbf{Meows \& Woofs} 
+            $|$ 
+            \small {
+                \emph{React.js, Express.js, \href{https://cloudinary.com/}{Cloudinary}, MongoDB}
+            }
+        }   
+        {}
+        \resumeItemListStart
+            \resumeItem {
+                Developed a pet product marketplace with secure JWT authentication, enabling seamless browsing, purchasing, and product management
+            }
+        \resumeItemListEnd
+
+    % ====================================================  PROJECT FIVE
+        % \resumeProjectHeading { 
+        %     \textbf{Binary Tree Visualizer} 
+        %     $|$ 
+        %     \small{\emph{C}}
+        %     $|$ 
+        %     \href{https://github.com/tusharnankani/binary-tree-visualizer}{GitHub}
+        % }   
+        % {May 2020 -- June 2020 }
+        % \resumeItemListStart
+        %     \resumeItem {
+        %         Displays a customized binary tree, showcasing three distinct tree traversals, using Computer Graphics libraries in C.
+        %     }
+        % \resumeItemListEnd
+
+    \resumeSubHeadingListEnd
+
+
+% \section{Publications}
+%     \resumeItemListStart
+%         \resumeItem {
+%           "DeepMint: NFT Generation Using Deep Learning", International Conference on Recent Advancements in AI - ICRAAI'23
+%         }
+%     \resumeItemListEnd
+% \vspace{-7pt}
+
+
+%-----------Extracurricular-----------
+\section{Achievements}
+    \resumeItemListStart
+        \resumeItem {
+            \textbf{Winner}: \href{https://mlh.io/}{Major League Hacking} HackTU Hackathon 2025 - Thapar University, Patiala
+        }
+        \resumeItem {
+            \textbf{Second Runner Up}: AIQuest Hackathon 2024 - IIT Bombay
+        }
+        \resumeItem {
+            \textbf{Finalist (Top 12)}: TSEC Hacks 2025 - Thadomal Sahani Engineering College, Bandra
+        }
+    \resumeItemListEnd
+    
+%-------------------------------------------
+\end{document}
