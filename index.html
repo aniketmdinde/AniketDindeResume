@@ -20,25 +20,93 @@
     <meta property="og:type" content="website" />
     <meta
       property="og:description"
-      content="Aniket Dinde's Résumé` — Software Developer."
-    />
-    <meta property="og:url" content="https://resume.aniketmdinde.com" />
-    <meta
-      property="og:image"
-      itemprop="image"
-      content="https://resume.aniketmdinde.com/static/img/og.png"
+      content="Aniket Dinde's Résumé — Software Developer."
     />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="600" />
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+        background-color: #f5f5f5;
+      }
+
+      .loader-container {
+        text-align: center;
+      }
+
+      .loader {
+        width: 48px;
+        height: 48px;
+        border: 5px solid #3498db;
+        border-bottom-color: transparent;
+        border-radius: 50%;
+        display: inline-block;
+        box-sizing: border-box;
+        animation: rotation 1s linear infinite;
+        margin-bottom: 20px;
+      }
+
+      @keyframes rotation {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+
+      h1 {
+        color: #2c3e50;
+        margin-bottom: 16px;
+        font-size: 24px;
+      }
+
+      p {
+        color: #7f8c8d;
+        margin-bottom: 24px;
+      }
+
+      .manual-download {
+        margin-top: 20px;
+        padding: 10px;
+        background-color: #f8f9fa;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      }
+
+      .download-link {
+        color: #3498db;
+        text-decoration: none;
+        font-weight: 500;
+      }
+
+      .download-link:hover {
+        text-decoration: underline;
+      }
+    </style>
   </head>
   <body>
-    Loading PDF, please wait...
-    <br />
-    <br />
-    If the download doesn't start automatically, please download the résumé
-    manually 👉 <a href=Aniket_Dinde_Resume.pdf" download>Tushar_Nankani.pdf</a>
+    <div class="loader-container">
+      <span class="loader"></span>
+      <h1>Loading Aniket Dinde's Résumé</h1>
+      <p>Please wait while we prepare your download...</p>
+      <div class="manual-download">
+        If the download doesn't start automatically, 
+        <a class="download-link" href="Aniket_Dinde_Resume.pdf" download>click here to download</a>
+      </div>
+    </div>
     <script>
-      location.href = "Aniket_Dinde_Resume.pdf";
+      // Small delay to show the loader animation
+      setTimeout(() => {
+        location.href = "Aniket_Dinde_Resume.pdf";
+      }, 1500);
     </script>
   </body>
 </html>
